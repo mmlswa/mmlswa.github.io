@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="1 求黄金分割点寻找某两个数相除，其结果 离黄金分割点 0.618最近             （1）分母和分子不能同时为偶数            （2）分母和分子 取值范围在[1-20 public class Excise1 {    public static void main(String[] args) {      int A = 0;                   //A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="blog]">
-<meta property="og:url" content="http://yoursite.com/2019/05/19/blog/index.html">
+<meta property="og:title" content="[java学习笔记]1.循环，字符，变量">
+<meta property="og:url" content="http://yoursite.com/2019/10/12/java学习笔记-1-循环，字符，变量/index.html">
 <meta property="og:site_name" content="wzh_forever">
+<meta property="og:description" content="1 求黄金分割点寻找某两个数相除，其结果 离黄金分割点 0.618最近             （1）分母和分子不能同时为偶数            （2）分母和分子 取值范围在[1-20 public class Excise1 {    public static void main(String[] args) {      int A = 0;                   //A">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-25T22:39:13.888Z">
+<meta property="og:updated_time" content="2019-10-12T13:42:46.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog]">
+<meta name="twitter:title" content="[java学习笔记]1.循环，字符，变量">
+<meta name="twitter:description" content="1 求黄金分割点寻找某两个数相除，其结果 离黄金分割点 0.618最近             （1）分母和分子不能同时为偶数            （2）分母和分子 取值范围在[1-20 public class Excise1 {    public static void main(String[] args) {      int A = 0;                   //A">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/19/blog/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/12/java学习笔记-1-循环，字符，变量/">
 
 
 
 
 
-  <title>blog] | wzh_forever</title>
+  <title>[java学习笔记]1.循环，字符，变量 | wzh_forever</title>
   
 
 
@@ -249,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/mmlswa.github.io/2019/05/19/blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/mmlswa.github.io/2019/10/12/java学习笔记-1-循环，字符，变量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhouHua">
@@ -266,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">blog]</h1>
+          <h1 class="post-title" itemprop="name headline">[java学习笔记]1.循环，字符，变量</h1>
         
 
         <div class="post-meta">
@@ -278,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-19T20:54:00+08:00">
-                2019-05-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-12T21:41:04+08:00">
+                2019-10-12
               </time>
             
 
@@ -321,7 +324,32 @@
       
 
       
-        
+        <h4 id="1-求黄金分割点"><a href="#1-求黄金分割点" class="headerlink" title="1 求黄金分割点"></a>1 求黄金分割点</h4><p>寻找某两个数相除，其结果 离黄金分割点 0.618最近<br>             （1）分母和分子不能同时为偶数            （2）分母和分子 取值范围在[1-20</p>
+<p>public class Excise1 {<br>    public static void main(String[] args) {</p>
+<pre><code>     int A = 0;                   //A  比较后传出来的新分子
+     int B=1;                     //B  比较后传出的新分母
+     double c=0,C=1;              //C  比较后传出来的新a/b的值
+     for(int a=1;a&lt;21;a++) {      //循环分子
+         for(int b=1;b&lt;21;b++) {  //循环分母
+             if(a%2==0&amp;b%2==0)    //如果两个同时为偶数是跳出
+                 continue;
+             c=(double)a/b;       //计算a/b的值并且 强制转化类型 赋值给c
+             if(Math.abs(c-0.618)&lt;Math.abs(C-0.618)) { //如果通过math函数调用.abs()方 
+                                                      法；取方法内参数的绝对值
+                 C=c;     //通过画x坐标轴 如果算出来的值小于一开始设定的（大C-0.168）就证 
+                          // 明距离0.168左边的距离比右边的短 所以赋值给大C 并且再次循环 
+                          //目的使得通过循环让分子和分母的比值越来越趋近于0.168
+                 A=a;      //将合适的分子a赋给一开始设定好的A
+                 B=b;     //将合适的分母b赋给一开始设定好的B
+             }
+
+         }
+     }
+     System.out.println(&quot;离黄金分割点（0.618）最近的两个数相除是：&quot;+A+&quot;/&quot;+B+&quot;=&quot;+C);
+    //将传给A B 的值输出来
+}
+</code></pre><p>}</p>
+
       
     </div>
     
@@ -345,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mmlswa.github.io/2019/05/19/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/mmlswa.github.io/2019/08/28/1/" rel="next" title="快手的超级“带货”能力">
+                <i class="fa fa-chevron-left"></i> 快手的超级“带货”能力
               </a>
             
           </div>
@@ -354,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/mmlswa.github.io/2019/05/19/first/" rel="prev" title="my first blog]">
-                my first blog] <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,8 +433,17 @@
 
       
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -454,6 +487,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-求黄金分割点"><span class="nav-number">1.</span> <span class="nav-text">1 求黄金分割点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
